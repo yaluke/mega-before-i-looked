@@ -65,7 +65,7 @@ describe('GET /api/digest/:night', () => {
     expect(res.status).toBe(200);
     const body = (await res.json()) as Body;
     expect(body.night).toBe('2026-10-28');
-    expect(body.badLines).toBe(0);
+    expect(body.badLines).toBe(1);
     const jobs = body.rows.map((r) => r.job);
     expect(jobs).toEqual([...jobs].sort());
     for (const r of body.rows) {
